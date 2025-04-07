@@ -23,3 +23,22 @@
 - Use of **MiniLibX**, a minimal graphics library for window creation and pixel rendering.
 - Working with pixels, buffers, and screen refreshes.
 - Handling keyboard input events (arrows, zoom, ESC).
+
+---
+
+## Built With
+- C
+- MiniLibx
+- Bresenham's Algorithm
+- Custom Libft
+
+---
+
+## Author
+- Artem Obshatko
+- School 42 - 42Warsaw
+
+---
+
+## License
+This project is part of the 42 cursus and is subject to its academic policies.
