@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 17:40:17 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/03 14:27:19 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:35:07 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ typedef struct s_coord
 
 typedef struct s_addr
 {
+	void			*img;
 	void			*mlx;
 	void			*win;
+	char			*data;
+	int				bpp;
+	int				line_size;
+	int				endian;
 }					t_addr;
 
 typedef struct s_step_coord

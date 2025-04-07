@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bresenham.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 07:17:34 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/03 16:26:20 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:35:03 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void	draw_line_h(t_pix xy, t_addr *addr, int dx, int dy)
 	int	i;
 	int	dir;
 	int	y;
+	int	pix_addr;
 
 	dir = direction(dy);
 	y = xy.y;
@@ -50,7 +51,11 @@ static void	draw_line_h(t_pix xy, t_addr *addr, int dx, int dy)
 	i = 0;
 	while (i <= dx)
 	{
-		mlx_pixel_put(addr->mlx, addr->win, xy.x + i, y, xy.color);
+		//mlx_pixel_put(addr->mlx, addr->img, xy.x + i, y, xy.color);
+		pix_addr = (y * addr->line_size) + ((xy.x + i) * (addr->bpp / 8));
+		addr->data[pix_addr] = (xy.color) & 0xFF;
+		addr->data[pix_addr + 1] = (xy.color >> 8) & 0xFF;
+		addr->data[pix_addr + 2] = (xy.color >> 16) & 0xFF;
 		i++;
 		if (p >= 0)
 		{
@@ -67,6 +72,7 @@ static void	draw_line_v(t_pix xy, t_addr *addr, int dx, int dy)
 	int	i;
 	int	dir;
 	int	x;
+	int	pix_addr;
 
 	dir = direction(dx);
 	x = xy.x;
@@ -75,7 +81,11 @@ static void	draw_line_v(t_pix xy, t_addr *addr, int dx, int dy)
 	i = 0;
 	while (i <= dy)
 	{
-		mlx_pixel_put(addr->mlx, addr->win, x, xy.y + i, xy.color);
+		//mlx_pixel_put(addr->mlx, addr->img, x, xy.y + i, xy.color);
+		pix_addr = ((xy.y + i) * addr->line_size) + (x * (addr->bpp / 8));
+		addr->data[pix_addr] = (xy.color) & 0xFF;
+		addr->data[pix_addr + 1] = (xy.color >> 8) & 0xFF;
+		addr->data[pix_addr + 2] = (xy.color >> 16) & 0xFF;
 		i++;
 		if (p >= 0)
 		{
