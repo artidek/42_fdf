@@ -6,13 +6,13 @@
 /*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:51:35 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/01/07 23:33:46 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/07 13:56:11 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
-# include "libft/libft.h"
+# include "../libft.h"
 # include <stdarg.h>
 
 typedef struct t_flags

@@ -6,7 +6,7 @@
 #    By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 17:00:05 by aobshatk          #+#    #+#              #
-#    Updated: 2025/01/05 19:24:47 by aobshatk         ###   ########.fr        #
+#    Updated: 2025/04/07 13:51:27 by aobshatk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
-LIBFTPATH		= ./libft
+LIBFTPATH		= ../
 LIBFT			= $(LIBFTPATH)/libft.a
 
 NAME			= libftprintf.a

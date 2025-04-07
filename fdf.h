@@ -6,15 +6,15 @@
 /*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 17:40:17 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/07 11:35:07 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/07 13:54:41 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include "ft_printf/libft/libft.h"
-# include "ft_printf/libftprintf.h"
+# include "libft/libft.h"
+# include "libft/ft_printf/libftprintf.h"
 # include "get_next_line/get_next_line.h"
 # include "minilibx/mlx.h"
 # include "minilibx/mlx_int.h"

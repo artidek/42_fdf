@@ -5,13 +5,13 @@ LDLIBS = -lmlx -lXext -lX11 -lm
 SRCSPATH = ./srcs
 UTILSPATH = ./utils
 GNLPATH = ./get_next_line
-PRINTFPATH = ./ft_printf
+PRINTFPATH = ./libft/ft_printf
 MLXPATH = ./minilibx
 LIBRPATH = ./utils
 
 SRCS = $(SRCSPATH)/init_list.c $(SRCSPATH)/ft_atoil.c $(SRCSPATH)/init_window.c $(SRCSPATH)/draw_map.c $(SRCSPATH)/bresenham.c \
 	   $(SRCSPATH)/create_coords.c
-UTILS = $(UTILSPATH)/helpers.c $(UTILSPATH)/list_utils.c $(UTILSPATH)/draw_utils.c $(UTILSPATH)/atob.c
+UTILS = $(UTILSPATH)/helpers.c $(UTILSPATH)/list_utils.c $(UTILSPATH)/atob.c
 GNL = $(GNLPATH)/get_next_line.c $(GNLPATH)/get_next_line_utils.c
 
 PRINTFA = $(PRINTFPATH)/libftprintf.a
@@ -49,6 +49,7 @@ $(LIBR): $(PRINTFA) $(MLXA) $(OBJS)
 
 clean:
 		@rm -f $(OBJS)
+		@make -s -C $(PRINTFPATH) clean
 		@echo "Clean complete"
 
 fclean:
