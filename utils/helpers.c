@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:50:42 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/03 16:19:41 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:28:52 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,31 +42,17 @@ int	check_file(char *file)
 	return (fd);
 }
 
-int	is_digits(char **arr)
+void	free_c_arr(char **arr)
 {
-	int		i;
-	int		j;
-	char	**temparr;
+	int	i;
 
 	i = 0;
-	j = 0;
-	temparr = arr;
-	while (temparr[j])
+	while (arr[i])
 	{
-		while (temparr[j][i])
-		{
-			if (!ft_isdigit(temparr[j][i]) && temparr[j][i] != '-')
-				return (0);
-			if (temparr[j][i] == '-' && !temparr[j][i + 1])
-				return (0);
-			if (temparr[j][i] == '-' && !ft_isdigit(temparr[j][i + 1]))
-				return (0);
-			i++;
-		}
-		i = 0;
-		j++;
+		free(arr[i]);
+		i++;
 	}
-	return (1);
+	free(arr);
 }
 
 int	is_ints(char **arr)

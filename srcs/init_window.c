@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:44:22 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/07 12:29:56 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:26:35 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	start_window(t_step_coord coords)
 	}
 	addreses.win = mlx_new_window(addreses.mlx, 1280, 960, "fdf");
 	addreses.img = mlx_new_image(addreses.mlx, 1280, 960);
-	addreses.data = mlx_get_data_addr(addreses.img, &addreses.bpp, &addreses.line_size, &addreses.endian);
+	addreses.data = mlx_get_data_addr(addreses.img, &addreses.bpp,
+			&addreses.line_size, &addreses.endian);
 	draw_map(&addreses, coords);
 	mlx_put_image_to_window(addreses.mlx, addreses.win, addreses.img, 0, 0);
 	mlx_key_hook(addreses.win, close_key, &addreses);

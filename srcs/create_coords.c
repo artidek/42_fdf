@@ -6,11 +6,17 @@
 /*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 21:06:00 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/03 21:25:10 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:27:21 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
+
+static void	fill_arrs(int **colors, int **z_matrix, t_coord *coords, int i)
+{
+	(*colors)[i] = 16777215;
+	(*z_matrix)[i] = ft_atoi((coords->heights)[i]);
+}
 
 static void	flip_hor(t_step_coord *res)
 {
@@ -57,12 +63,11 @@ static t_step_coord	add_pix(t_coord *coords, t_step_coord res, int **colors,
 			spltdx = ft_split(spltd[1], 'x');
 			(*colors)[i] = atob(spltdx[1]);
 			(*z_matrix)[i] = ft_atoi(spltd[0]);
+			free_c_arr(spltd);
+			free_c_arr(spltdx);
 		}
 		else
-		{
-			(*colors)[i] = 16777215;
-			(*z_matrix)[i] = ft_atoi((coords->heights)[i]);
-		}
+			fill_arrs(colors, z_matrix, coords, i);
 		i++;
 	}
 	return (res);

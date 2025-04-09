@@ -6,16 +6,16 @@
 /*   By: aobshatk <aobshatk@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 17:40:17 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/04/07 13:54:41 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/04/09 09:23:58 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include "libft/libft.h"
-# include "libft/ft_printf/libftprintf.h"
 # include "get_next_line/get_next_line.h"
+# include "libft/ft_printf/libftprintf.h"
+# include "libft/libft.h"
 # include "minilibx/mlx.h"
 # include "minilibx/mlx_int.h"
 # include <linux/input-event-codes.h>
@@ -74,6 +74,7 @@ void				draw_map(t_addr *addrs, t_step_coord coords);
 void				draw_line(t_pix xy, t_addr *addr);
 void				lst_add(t_step_coord **lst, t_step_coord *new);
 void				lst_clear(t_step_coord **lst);
+void				free_c_arr(char **arr);
 t_coord				*create_node(int y, char **height);
 t_coord				*init_list(char *file);
 t_coord				*last_node(t_coord *lst);
